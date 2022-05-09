@@ -1,0 +1,31 @@
+
+typedef struct stack{
+    int *v;
+    int top;
+}stack;
+
+//antes de começar a usar a stack usa o criar(pilha) pra setar o top pra 0
+
+void criar(stack *p){
+    p->top = 0;
+}
+
+void push(stack *p,int x){
+    //coloca o novo termo na posiçao do top atual
+    p->v[p->top] = x;
+    //atualiza o valor do top
+    p->top++;
+}
+
+void pop(stack *p){
+    //atualiza o top
+    p->top--;
+}
+
+int top(stack p){
+    return p->v[p->top];
+}
+
+int size(stack p){
+    return p->top;
+}
